@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Vaishnavi!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            /* Deep Space & Neon Gradient */
+            --primary-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            
+            --text-main: #ffffff;
+            --text-muted: #e0e0e0;
+        }
+
+        /* --- RESET & BODY --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-gradient);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            color: var(--text-main);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 100, 0.6); }
+            15% { transform: scale(1.3); text-shadow: 0 0 40px rgba(255, 0, 100, 1); }
+            30% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 100, 0.6); }
+            45% { transform: scale(1.15); text-shadow: 0 0 35px rgba(255, 0, 100, 0.9); }
+            60% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 100, 0.6); }
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- REALISTIC GLASS EFFECT --- */
+        .glass-card {
+            background: linear-gradient(
+                135deg, 
+                rgba(255, 255, 255, 0.1), 
+                rgba(255, 255, 255, 0)
+            );
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 40px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            animation: popIn 1.5s ease forwards;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .scroll-down {
+            margin-top: 50px;
+            animation: float 2s infinite ease-in-out;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.8;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        /* --- CONTENT TYPOGRAPHY --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        strong {
+            color: #fff;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 5px;
+            width: fit-content;
+        }
+
+        p {
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- NEW "SPECIAL" SPHERE --- */
+        .magic-sphere {
+            width: 200px;
+            height: 200px;
+            /* Glass circle */
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            border-radius: 50%;
+            margin: 0 auto 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.5);
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.3); /* Pink Glow around circle */
+            position: relative;
+        }
+
+        .neon-heart {
+            font-size: 5rem;
+            color: #ff0055;
+            animation: heartBeat 1.5s infinite ease-in-out;
+            /* Remove standard text shadow so animation controls it */
+        }
+
+        /* --- CONFETTI CANVAS --- */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti"></canvas>
+
+    <div class="container hero">
+        <div class="glass-card">
+            <p class="subtitle">January 14th</p>
+            <h1>Happy Birthday, <br> Vaishnavi!</h1>
+            <p style="color: #eee;">The world got a little brighter today.</p>
+        </div>
+        <div class="scroll-down">↓</div>
+    </div>
+
+    <div class="container">
+        
+        <section class="glass-card">
+            <div class="magic-sphere">
+               <div class="neon-heart">💙</div>
+            </div>
+            
+            <h2>Make a Wish</h2>
+            <div style="text-align: center;">
+                <p>
+                    To my best friend, wishing you a day filled with love, laughter, and all the things that make you smile. 
+                    You deserve the absolute best today and every day.
+                </p>
+            </div>
+        </section>
+
+        <section class="glass-card">
+            <h2 style="text-align: center;">Why You're Awesome</h2>
+            
+            <div class="content-grid">
+                <div>
+                    <strong>🌟 Your Vibe</strong>
+                    <p>
+                        Your vibes feel too comfortable. Your thoughts, your suggestions make me sometimes feel better instantly.
+                    </p>
+                </div>
+                <div>
+                    <strong>🧠 Your Brain</strong>
+                    <p>
+                        I admire you because you are really bold, strong, and confident. I wish you would stay like this in any situation.
+                    </p>
+                </div>
+                <div>
+                    <strong>💖 Our Friendship</strong>
+                    <p>
+                        Our friendship is like understanding each other. Specially I feel great because of your friendship. Thank you for your support while I feel down. <br><br>
+                        ONCE AGAIN HAPPY BIRTHDAY GIRAFFE! 🦒
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="color: white; font-family: 'Dancing Script'; font-size: 2rem;">Best Friends Forever</h3>
+            <p style="color: white; opacity: 0.5;">Made with ❤️ by Vinay </p>
+        </section>
+
+    </div>
+
+    <script>
+        // --- SCROLL REVEAL ANIMATION ---
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- CONFETTI (Gold, Silver, White, Pink) ---
+        const canvas = document.getElementById("confetti");
+        const ctx = canvas.getContext("2d");
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+
+        const particles = [];
+        const colors = ['#ffffff', '#e0e0e0', '#FFD700', '#ff0055'];
+
+        function Particle() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height - height;
+            this.size = Math.random() * 5 + 2;
+            this.speedY = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function initConfetti() {
+            for (let i = 0; i < 150; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach((p, index) => {
+                p.y += p.speedY;
+                p.x += p.speedX;
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                if (p.y > height) {
+                    p.y = -10;
+                    p.x = Math.random() * width;
+                }
+            });
+            requestAnimationFrame(animateConfetti);
+        }
+
+        initConfetti();
+        animateConfetti();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        });
+    </script>
+</body>
+</html>
